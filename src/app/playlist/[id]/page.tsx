@@ -1,6 +1,7 @@
 import { getDb } from "@/lib/db";
 import Link from "next/link";
 import { RemovePlaylistSongButton } from "./RemovePlaylistSongButton";
+import { updatePlaylist } from "@/actions/playlists";
 
 function formatDuration(duration: number): string {
   const minutes = Math.floor(duration / 60);
@@ -57,9 +58,35 @@ export default async function PlaylistPage({
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <p className="text-2xl font-bold">Playlist: {playlist.name}</p>
-        <Link className="btn" href={`/playlist/${playlist.id}/edit`}>
-          Edit
-        </Link>
+        <div className="dropdown">
+                  <div tabIndex={0} role="button" className="btn m-1">Edit</div>
+                  <div
+                    tabIndex={0}
+                    className="dropdown-content card card-sm bg-base-100 z-1 w-64 shadow-md">
+                    <div className="card-body">
+                      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+                              <p className="text-2xl font-bold">Update Playlist: {playlist.name}</p>
+                              <form action={updatePlaylist}>
+                                <input
+                                  type="text"
+                                  name="playlistId"
+                                  value={playlist.id}
+                                  hidden
+                                  readOnly
+                                />
+                                <input
+                                  className="input"
+                                  type="text"
+                                  name="playlistName"
+                                  defaultValue={playlist.name}
+                                />
+                                <input className="btn" type="submit" value="Update" />
+                              </form>
+                            </main>
+                    </div>
+                  </div>
+                </div>
+        
         <div>
           <table className="table">
             <thead>

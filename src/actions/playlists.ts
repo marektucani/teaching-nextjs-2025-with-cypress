@@ -61,7 +61,7 @@ export async function updatePlaylist(formData: FormData) {
   await db.updateTable("playlists").set({ name: playlistNameStr }).where("id", "=", playlistIdInt).execute();
 
   revalidatePath(`/playlist/${playlistIdInt}`);
-  redirect(`/playlist/${playlistIdInt}`);
+  // redirect(`/playlist/${playlistIdInt}`);
 }
 
 export async function addSongToPlaylist(playlistId: number, songId: number) {
