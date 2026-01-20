@@ -48,6 +48,9 @@ export function NavBar() {
         <Link href="/playlists" className="btn btn-ghost text-xl">
           Playlists
         </Link>
+        <Link href="/liked-songs" className="btn btn-ghost text-xl">
+          Liked Songs
+        </Link>
       </div>
     </div>
   );
