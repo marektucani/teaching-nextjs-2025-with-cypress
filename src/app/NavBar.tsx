@@ -15,7 +15,7 @@ export function NavBar() {
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost text-xl">
+        <Link href="/" className="btn btn-ghost text-xl" data-cy="spotify-logo">
           Spotify
         </Link>
       </div>
@@ -28,6 +28,7 @@ export function NavBar() {
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}
+<<<<<<< HEAD
           onKeyUp={(e) => {
             console.log("key pressed:", e.key);
             if (e.key === 'Enter') {
@@ -35,6 +36,9 @@ export function NavBar() {
               router.push(`/search?q=${searchInput}`)
             }
           }}
+=======
+          data-cy="search-input"
+>>>>>>> d56a501f4b44ff81bdc394fb65fdc2a98805b125
         />
         <Link
           href={{
@@ -42,6 +46,7 @@ export function NavBar() {
             query: searchLinkQuery,
           }}
           className="btn btn-ghost text-xl"
+          data-cy="search-button"
         >
           Search
         </Link>

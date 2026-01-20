@@ -51,30 +51,30 @@ export default async function Home({
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div>
-          <p>Songs</p>
-          <ul>
+          <p data-cy="songs-header">Songs</p>
+          <ul data-cy="songs-list">
             {songs.map((song) => (
-              <li key={song.id}>
+              <li key={song.id} data-cy="song-item">
                 {song.name} - {song.album_name} - {song.author_name}
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <p>Albums</p>
-          <ul>
+          <p data-cy="albums-header">Albums</p>
+          <ul data-cy="albums-list">
             {albums.map((album) => (
-              <li key={album.id}>
+              <li key={album.id} data-cy="album-item">
                 {album.name} - {album.author_name}
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <p>Authors</p>
-          <ul>
+          <p data-cy="authors-header">Authors</p>
+          <ul data-cy="authors-list">
             {authors.map((author) => (
-              <li key={author.id}>{author.name}</li>
+              <li key={author.id} data-cy="author-item">{author.name}</li>
             ))}
           </ul>
         </div>

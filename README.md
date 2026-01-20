@@ -25,6 +25,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Run cypress tests:
+
+```bash
+npm run test:cypress
+```
+
 #### Database management
 
 SQLite database resides in [`db.sqlite`](db.sqlite) file.

@@ -11,7 +11,8 @@
     "db:migrate:latest": "kysely migrate:latest",
     "db:seed:make": "kysely seed:make new_seed",
     "db:seed:run": "kysely seed:run",
-    "db:codegen": "kysely-codegen --url db.sqlite --out-file src/lib/db-types.ts"
+    "db:codegen": "kysely-codegen --url db.sqlite --out-file src/lib/db-types.ts",
+    "test:cypress": "cypress open"
   },
   "dependencies": {
     "better-sqlite3": "^12.2.0",
@@ -28,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cypress": "^15.5.0",
     "daisyui": "^5.1.4",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",

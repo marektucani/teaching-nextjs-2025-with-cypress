@@ -19,18 +19,18 @@ export default async function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <p className="text-4xl font-bold">Spotify</p>
-        <div className="grid grid-cols-2 gap-4">
+        <p className="text-4xl font-bold" data-cy="title">Spotify</p>
+        <div className="grid grid-cols-2 gap-4" data-cy="albums-grid">
           {albums.map((album) => (
-            <div key={album.id} className="card w-64 bg-base-100 shadow-sm">
+            <div key={album.id} className="card w-64 bg-base-100 shadow-sm" data-cy="album-card">
               <div className="card-body">
                 <span className="badge badge-xs badge-warning">Pop</span>
-                <h2 className="text-3xl font-bold">{album.name}</h2>
+                <h2 className="text-3xl font-bold" data-cy="album-title">{album.name}</h2>
 
                 <p>ID: {album.id}</p>
                 <p>
                   Author:{" "}
-                  <Link href={`/author/${album.author_id}`}>
+                  <Link href={`/author/${album.author_id}`} data-cy="album-author-link">
                     {album.author_name}
                   </Link>
                 </p>
@@ -41,6 +41,7 @@ export default async function Home() {
                   <Link
                     className="btn btn-primary btn-block"
                     href={`/album/${album.id}`}
+                    data-cy="album-detail-link"
                   >
                     Detail
                   </Link>
@@ -51,7 +52,7 @@ export default async function Home() {
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <p>Footer</p>
+        <p data-cy="footer">Footer</p>
       </footer>
     </div>
   );
