@@ -28,17 +28,7 @@ export function NavBar() {
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}
-<<<<<<< HEAD
-          onKeyUp={(e) => {
-            console.log("key pressed:", e.key);
-            if (e.key === 'Enter') {
-              // TODO - add proper code and sanitization
-              router.push(`/search?q=${searchInput}`)
-            }
-          }}
-=======
           data-cy="search-input"
->>>>>>> d56a501f4b44ff81bdc394fb65fdc2a98805b125
         />
         <Link
           href={{
