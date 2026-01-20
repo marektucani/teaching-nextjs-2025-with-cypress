@@ -98,7 +98,7 @@ export async function removeSongFromPlaylist(
 
 export async function likeSong(songId: number) {
   const db = getDb();
-  const userId = 1; // Hardcoded for now, would normally come from session
+  const userId = 1; 
 
   try {
     await db
@@ -112,14 +112,14 @@ export async function likeSong(songId: number) {
 
     revalidatePath("/");
   } catch (error) {
-    // Song might already be liked, ignore unique constraint error
+    
     console.log("Song already liked or error:", error);
   }
 }
 
 export async function unlikeSong(songId: number) {
   const db = getDb();
-  const userId = 1; // Hardcoded for now, would normally come from session
+  const userId = 1; 
 
   await db
     .deleteFrom("liked_songs")
